@@ -1,0 +1,53 @@
+<div class="widget widget_links themes_cats topmargin-xs mb-3 mb-lg-0  bigger-110">
+    <div class="mb-2"><b>Производители</b></div>
+    <div>
+        {% if BrandList.make().active().sort().category(obActiveCategoryItem.id) is not empty %}
+        {% set obBrandList = BrandList.make().active().sort().category(obActiveCategoryItem.id) %}
+        {% else %}
+        {% set obBrandList = BrandList.make().active().sort() %}
+        {% endif %}
+        {% for obBrandItem in obBrandList %}
+        <div class="my-1 text-dark">
+            <a href="/brand/{{obBrandItem.slug}}" class="text-dark"
+               {% if obBrandItem.id == obBrand.id %} style="font-weight: bold;" {% endif %}
+            >{{ obBrandItem.name }}</a>
+        </div>
+        {% endfor %}
+    </div>
+    <hr>
+    <div class="mt-4 mb-2"><b>Категории</b></div>
+    <ul class="">
+        {% for obCategory in obCategoryList %}
+        {% if obCategory.product_count > 0 %}
+        <li class="nav-item active">
+            <strong class="current_cat blue">{{ obCategory.name }} <span class=""> {{obCategory.product_count }}</span></strong>
+        </li>
+        {% if obCategory.children is not empty %}
+        <ul class="mt-2">
+            {% for obChildCategory in obCategory.children %}
+            {% if obChildCategory.product_count > 0 %}
+            <li>
+                <a href="/catalog/{{obChildCategory.slug}}">{{ obChildCategory.name }} <span
+                    class="text-muted">{{obChildCategory.product_count }}</span></a>
+            </li>
+            {% if obChildCategory.children is not empty %}
+            <ul class="mt-2">
+                {% for obChildChildCategory in obChildCategory.children %}
+                {% if obChildChildCategory.product_count > 0 %}
+                <li>
+                    <a href="/catalog/{{obChildChildCategory.slug}}">{{ obChildChildCategory.name }} <span
+                        class="text-muted">{{obChildChildCategory.product_count }}</span></a>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </ul>
+
+</div>

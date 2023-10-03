@@ -1,0 +1,32 @@
+[backendLink]
+
+[sitePicker]
+==
+<nav class="primary-menu with-arrows">
+
+    <ul class="menu-container">
+        {% for obCategory in obCategoryList %}
+        <li class="menu-item">
+            <div class="menu-link"><div>{{obCategory.name}}</div></div>
+            <ul class="sub-menu-container">
+                {% for obChildCategory in obCategory.children %}
+                <li class="menu-item">
+                    <a class="menu-link" href="/catalog/{{obChildCategory.slug}}"><div>{{obChildCategory.name}}</div></a>
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+        <li class="menu-item">
+            <a class="menu-link" href=""><div>Производители</div></a>
+            <ul class="sub-menu-container">
+                {% for obBrand in obBrandList %}
+                <li class="menu-item">
+                    <a class="menu-link" href="/brand/{{obBrand.slug}}"><div>{{obBrand.name}}</div></a>
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+
+</nav>

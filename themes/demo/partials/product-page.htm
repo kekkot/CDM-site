@@ -1,0 +1,164 @@
+{% set obOffer = obProduct.offer.first() %}
+<div class="single-product clearfix">
+    <div class="product">
+        <div class="row gutter-40">
+            <div class="col-md-7">
+                <div class="product-image">
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper" data-lightbox="gallery">
+    {% for slide in obProduct.images %}
+    <div class="swiper-slide">
+        <a href="{{slide.path}}"
+           data-lightbox="gallery-item">
+            <img
+                data-src="{{slide.path}}"
+                src="{{slide.path}}"
+                draggable="true">
+        </a>
+    </div>
+    {% endfor %}
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+                </div>
+            </div>
+            <div class="col-md-5 product-desc pt-0">
+                <h1 class="mb-2  text-dark " style="font-size: 1.5rem">{{ obProduct.name }}</h1>
+                <div class="line"></div>
+                {{ obProduct.description|raw }}
+                <div class="line"></div>
+
+                <form class="cart mb-3 " method="post" enctype="multipart/form-data">
+
+                    <div class="">
+                        <a href="#"
+                           class="add-to-cart button button-xlarge ls-1 w-100 m-0 font-primary text-center button-rounded" 
+                         id="openModal" data-modal-id="{{modalUnicName}}" data-partial="{{modalPartial}}" 
+                         data-title="{{ obProduct.name }}">Узнать
+                            цену</a>
+                    </div> 
+                 </form>
+                {% if obOffer.preview_image is not empty %}
+                {# <div class="fancy-title title-bottom-border ">
+                    <h4>Коммерческое предложение</h4>
+                </div> #}
+                <div class="mb-3">
+                    <a target="_blank" href="{{obOffer.preview_image.path}}" class="d-flex align-items-center link-dark link-hover">
+                        <i class="icon-file-download m-0 me-2 bigger-140"></i>
+                        <span class="bigger-110">Спецификация</span>    
+                    </a>
+                </div>
+                {% endif %}
+                <div class="line"></div>
+
+
+            </div>
+            <div class="my-5 px-3 px-lg-0">
+                <div class="tabs tabs-bb clearfix ui-tabs ui-corner-all ui-widget ui-widget-content" id="tab-9">
+
+
+                    <ul class="tab-nav clearfix bigger-120 ui-tabs-nav ui-corner-all ui-helper-reset ui-helper-clearfix ui-widget-header"
+                        role="tablist">
+
+                        <li role="tab" tabindex="0"
+                            class="ui-tabs-tab ui-corner-top ui-state-default ui-tab ui-tabs-active ui-state-active"
+                            aria-controls="parameters" aria-labelledby="ui-id-1" aria-selected="true"
+                            aria-expanded="true"><a href="#parameters" tabindex="-1" class="ui-tabs-anchor"
+                                                    id="ui-id-1">Характеристики</a></li>
+                        {% if obOffer.preview_text is not empty %}
+                        <li role="tab" tabindex="0"
+                            class="ui-tabs-tab ui-corner-top ui-state-default ui-tab  ui-state-active"
+                            aria-controls="description" aria-labelledby="ui-id-2" aria-selected="true"
+                            aria-expanded="true"><a href="#description" tabindex="-1" class="ui-tabs-anchor"
+                                                    id="ui-id-2">Описание</a></li>
+                        {% endif %}
+                    </ul>
+
+                    <div class="tab-container ">
+
+
+                        <div class="tab-content clearfix ui-tabs-panel ui-corner-bottom ui-widget-content"
+                             id="parameters" aria-labelledby="ui-id-1" role="tabpanel" aria-hidden="false">
+                            {{ obOffer.description|raw }}
+                        </div>
+                        <div class="tab-content clearfix ui-tabs-panel ui-corner-bottom ui-widget-content"
+                             id="description" aria-labelledby="ui-id-2" role="tabpanel" aria-hidden="false" style="">
+                            <div class="ms-3">{{ obOffer.preview_text|raw }}</div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="w-100">
+                {% if obOffer.images is not empty %}
+                <div class="fancy-title title-bottom-border ">
+                    <h4>Навесное оборудование</h4>
+                </div>
+                <div id="oc-images"
+                     class="owl-carousel image-carousel carousel-widget owl-loaded owl-drag with-carousel-dots mb-5"
+                     data-items-xs="2" data-items-sm="3" data-items-lg="4" data-items-xl="5"> 
+                    <div class="owl-stage-outer">
+                        <div class="owl-stage"
+                             style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2391px;">
+                             {% for img in obOffer.images %}
+                            <div class="owl-item active" style="width: 179.2px; margin-right: 20px;">
+                                <div class="oc-item border rounded p-2">
+                                    <a href="#" onclick="return false;"><img
+                                        src="{{img.path}}"
+                                        alt="{{img.title}}"></a>
+                                    <div class="text-center smaller-90">{{img.title}}</div>
+                                </div>
+                            </div> 
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="owl-nav">
+                        <button type="button" role="presentation" class="owl-prev disabled"><i
+                            class="icon-angle-left"></i></button>
+                        <button type="button" role="presentation" class="owl-next"><i class="icon-angle-right"></i>
+                        </button>
+                    </div>
+                    <div class="owl-dots">
+                        <button role="button" class="owl-dot active"><span></span></button> 
+                    </div>
+                </div>
+                {% endif %}
+
+                    {% if obOffer.code is not empty %}
+                <div class="fancy-title title-bottom-border mt-5">
+                <h4>Видеообзор</h4>
+                </div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/{{obOffer.code}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+                </div>
+ {% endif %}
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<style>
+  .link-hover{
+      padding: 5px 10px;
+      border:2px solid #F18052;
+      border-radius:3px;
+      justify-content:center;
+  }
+   .mb-3 .link-hover:hover{
+       border: 2px solid #444;
+       transition: all .2s ease-in-out;
+   }
+  .product-desc .descriptionProduct__info{
+      flex-direction: column;
+  }      
+  .card-body table{
+      display:table;
+  }
+</style>

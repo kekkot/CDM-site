@@ -1,0 +1,52 @@
+{% set nextProductId = ProductData.get(obProduct.id + 1) %}
+{% set previosProductId = ProductData.get(obProduct.id - 1) %}
+
+<div class="container py-4  ">
+    <div class="d-flex align-items-center justify-content-between flex-column flex-sm-row">
+        {% if arBreadcrumbs is not empty %}
+        <div class="mb-2">
+
+            {% for obBreadcrumb in arBreadcrumbs %}
+            {% if loop.last %}
+            <span class="mx-1 text-muted">{{ obBreadcrumb.name }}</span>
+            {% elseif obBreadcrumb.name == 'Спецтехника' %}
+             <span class="mx-1 text-muted">{{ obBreadcrumb.name }} /</span>
+            {% elseif obBreadcrumb.name is not empty  %}
+            <a class="link-dark" href="{{obBreadcrumb.url}}">{{ obBreadcrumb.name }}</a>
+            <span class="mx-1">/</span>
+            {% endif %}
+            {% endfor %}
+
+
+        </div>
+        <div data-hook="pagination" class=" mt-3 mt-sm-0">
+            {% if previosProductId.slug is not empty %}
+            <a rel="prev" href="{{previosProductId.getPageUrl('catalog/categoryPage')}}" class="link-dark me-1">
+                <svg viewBox="0 0 16 16" fill="currentColor" width="16" height="16">
+                    <path fill="currentColor"
+                          d="M11.519 13.934c0.214 0.217 0.214 0.566 0 0.783s-0.561 0.217-0.775 0l-6.264-6.326c-0.214-0.217-0.214-0.567 0-0.783l6.264-6.326c0.214-0.217 0.561-0.217 0.775 0s0.214 0.566 0 0.783l-5.712 5.934 5.712 5.934z"></path>
+                </svg>
+                Назад</a>
+            {% endif %}
+            |
+            {% if nextProductId.slug is not empty %}
+            <a rel="next" href="{{nextProductId.getPageUrl('catalog/categoryPage')}}"
+
+               class="link-dark ms-1">Вперед
+                <svg viewBox="0 0 16 16" fill="currentColor" width="16" height="16">
+                    <path fill="currentColor"
+                          d="M4.48 13.934c-0.214 0.217-0.214 0.566 0 0.783s0.561 0.217 0.775 0l6.264-6.326c0.214-0.217 0.214-0.567 0-0.783l-6.264-6.326c-0.214-0.217-0.561-0.217-0.775 0s-0.214 0.566 0 0.783l5.712 5.934-5.712 5.934z"></path>
+                </svg>
+            </a>
+            {% endif %}
+        </div>
+        {% else %}
+        <div class="mb-2">
+        <a class="link-dark" href="/">Главная</a>
+        <span class="mx-1">/</span>
+        <span class="mx-1 text-muted">        {{this.page.title}}</span>
+        </div>
+
+        {% endif %}
+    </div>
+</div>

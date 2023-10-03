@@ -1,0 +1,411 @@
+/* ----------------------------------------------------------------
+	Custom CSS
+
+	Add all your Custom Styled CSS here for New Styles or
+	Overwriting Default Theme Styles for Better Handling Updates
+-----------------------------------------------------------------*/
+
+
+.button {
+	text-transform: none;
+	letter-spacing: 0px;
+	font-weight: 400;
+}
+
+.button.button-xlarge {
+	letter-spacing: 1px;
+	font-weight: 400 !important;
+}
+
+.menu-link {
+	text-transform: none;
+	letter-spacing: 0px;
+	font-weight: 400;
+	font-size: .9rem;
+}
+
+.slider-caption h2 {
+    letter-spacing: 0px;
+    text-transform: none;
+    font-weight: 500;
+	font-size: 2.5rem;
+}
+
+.fbox-content h3, .promo-uppercase, h4 {
+	text-transform: none;
+}
+
+.fbox-content h3, .widget > h4 {
+    font-weight: 400 !important;
+	letter-spacing: 0px;
+    text-transform: none;
+
+}
+
+.widget_links li {
+    display: block !important;
+}
+
+.current_cat {
+	padding-left: 12px;
+}
+
+
+.fbox-content p {
+    color: #7a7777;
+	font-size: .9rem;
+}
+
+.fw-200 {
+	font-weight: 200;
+}
+
+.fw-300 {
+	font-weight: 300;
+}
+
+.fw-400 {
+	font-weight: 400;
+}
+
+.fw-500 {
+	font-weight: 500;
+}
+
+.fw-600 {
+	font-weight: 600;
+}
+
+.fw-700 {
+	font-weight: 700;
+}
+
+.bigger-110 {
+	font-size: 110% !important;
+}
+
+.bigger-120 {
+	font-size: 120% !important;
+}
+
+.bigger-130 {
+	font-size: 130% !important;
+}
+
+.bigger-140 {
+	font-size: 140% !important;
+}
+
+.bigger-150 {
+	font-size: 150% !important;
+}
+
+.bigger-160 {
+	font-size: 160% !important;
+}
+
+.bigger-170 {
+	font-size: 170% !important;
+}
+
+.bigger-180 {
+	font-size: 180% !important;
+}
+
+.bigger-190 {
+	font-size: 190% !important;
+}
+
+.bigger-200 {
+	font-size: 200% !important;
+}
+
+
+.smaller-90 {
+	font-size: 90%;
+}
+
+.smaller-80 {
+	font-size: 80%;
+}
+
+.smaller-70 {
+	font-size: 90%;
+}
+.smaller-65 {
+    font-size: 65%;
+}
+
+.smaller-60 {
+    font-size: 60%;
+}
+
+
+h3, .h3 {
+	font-size: calc(1.3rem + 0.6vw);
+	letter-spacing: 0px;
+	color: #111;
+}
+
+.footer-widgets-wrap {
+	font-size: .9rem;
+}
+
+.dark  .footer-widgets-wrap a {
+	color: #fff;
+
+}
+
+.widget > h4 {
+margin-bottom: 15px;
+}
+
+.descriptionProduct__info {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+
+.descriptionProduct__infoName {
+	font-weight: 500;
+	color: #111;
+}
+
+.heading-block  h1 {
+    letter-spacing: 0px;
+    text-transform: none;
+}
+
+.button-border.button-primary {
+    color: #F18052;
+    border-color: #F18052;
+}
+
+.button-border.button-primary:hover {
+	background-color: #F18052 !important;
+}
+
+#gotoTop {
+	left: 30px;
+	right: auto;
+}
+
+
+.text-ellipsis {
+ white-space: nowrap; /* Запрещаем перенос строк */
+ overflow: hidden; /* Обрезаем все, что не помещается в область */
+ text-overflow: ellipsis; /* Добавляем многоточие */
+}
+
+.min-h-54 {
+	min-height: 54px;
+}
+
+@media (max-width: 500px) {
+	.product_table td {
+		font-size: 80%;
+		width: 50%;
+
+	}
+}
+
+.hidden {
+	display: none;
+}
+
+form {
+	margin:0px;
+}
+
+label {
+	text-transform: none;
+	letter-spacing: 0px;
+	font-size: 1rem;
+}
+
+.button-widget {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 299;
+	letter-spacing: 0px !important;
+}
+
+.button-whatsapp {
+	background-color: #25D366 !important;
+}
+
+.button-msgr > div {
+    margin-top: -5px;
+}
+
+.button-msgr i {
+    top: 5px;
+}
+
+.button-xlarge i {
+    margin-right: 8px;
+}
+
+@media (max-width: 992px) {
+.button-widget {
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    border-radius: 0px !important;
+}
+}
+
+.page-contacts {
+	padding-bottom: 0px;
+}
+
+.fbox-content h2 {
+    font-size: 24px;
+}
+
+.copyright_link img {
+	opacity: .6;
+}
+
+.copyright_link a:hover img {
+	opacity: 1;
+}
+
+.px96 {
+	width: 96px;
+	height: 96px;
+}
+
+.min-h-240 {
+    min-height: 250px
+}
+
+.widget_links li a {
+	display: initial !important;
+}
+
+
+@media (max-width: 992px){
+    body #slider{
+        min-height: 350px!important;
+    }      
+}
+@media (max-width: 600px){
+    body #slider{
+        min-height: 250px!important;
+    }      
+}
+
+.swiper-button-next, .swiper-button-prev {  
+    color: #f18052!important;
+}
+
+@media (min-width: 768px) and (max-width: 1400px){
+    table tr{
+    border-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    }      
+    
+ .card-img-top {
+    object-fit: cover!important;
+    height: auto!important;
+}
+}
+  .custom-select {
+    position: relative;
+    display: inline-block;
+  }
+
+  .custom-select select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    padding-right: 30px; /* Добавляем дополнительное пространство для стрелочки */
+  }
+
+  /* .custom-select::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 5px;  
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #000;  
+    pointer-events: none;  
+  } */
+  .descriptionProduct__content .descriptionProduct__info{
+      flex-direction: column;
+  }
+  .feature-box {
+      transition: 300ms;
+  }
+  .feature-box:hover{
+      background-color:#F18052;
+  }
+  .feature-box:hover h2{
+       color: white;
+  }
+
+ 
+ @media (max-width:1200px){
+.custom-select { 
+    flex-direction: column;
+}
+ }
+
+.card-body table{
+ 	display: table;
+
+}
+.card-body table tr {
+	display: table-row;
+        border-color: #d2d2d2;
+}
+.card-body table td {
+	display: table-cell;
+         padding: 0.5rem 0.5rem;
+    background-color: var(--bs-table-bg);
+    border-bottom-width: 1px;
+    box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+        border-color: #d2d2d2;
+}
+small tr td {
+    white-space: nowrap;
+}
+    .container.brands {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .container.brands .card {
+    width: auto;
+    min-width: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    }
+
+    .container.brands .logo {
+      width: 120px; /* Размер логотипа */
+     }
+
+    .container.brands .company-name {
+      margin-left: 10px;
+      font-weight: bold;
+      color:black;
+      font-size: 24px;
+    }

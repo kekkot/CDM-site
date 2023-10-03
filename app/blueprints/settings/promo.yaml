@@ -1,0 +1,23 @@
+uuid: d638a5c0-dfe7-4869-b346-dc31a8d1afd1
+handle: Settings\Promo
+type: entry
+name: Акции
+drafts: false
+ 
+navigation:
+    parent: Settings\Slides
+    icon: icon-magic
+    order: 10 
+
+fields:
+    img:
+        label: Баннер
+        type: fileupload
+        mode: image
+    title:
+        label: Заголовок
+        type: text
+    description:
+        label: Текст
+        type: textarea
+        size: small

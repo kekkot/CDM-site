@@ -1,0 +1,97 @@
+<!-- Content
+============================================= -->
+<h3 class="title-catalog-text">Каталог спецтехники</h3>
+<section id="content">
+    <div class="content-wrap py-0">
+        <div class="section my-0 bg-white">
+            <div class="container clearfix">
+                <div class="row justify-content-center col-mb-50">
+                    {% if obCategoryList.isNotEmpty() %}
+                    {% for obCategory in obCategoryList.children %}
+                    <div class="cart-block col-sm-6 col-lg-4 ">
+                        <div class="feature-box media-box border rounded pb-3 shadow-sm" style="min-height: 395px;">
+                            <div class="fbox-media">
+                                <a href="/catalog/{{obCategory.slug}}">
+                                    <img class="rounded" src="{{obCategory.preview_image.path}}" alt="{{obCategory.name}}">
+                                </a>
+                            </div>
+                            <div class="fbox-content px-0 text-center">
+                                <a href="/catalog/{{obCategory.slug}}"><h2>{{obCategory.name}}</h2></a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif%}
+                </div>
+
+            </div>
+        </div>
+        <div class="section  my-0 ">
+            <div class="container clearfix">
+                <div class="text-center title-border">
+                    <h3 class="fw-400 mb-5">Сертификаты</h3>
+                </div>
+
+                <div id="oc-images" class="owl-carousel image-carousel carousel-widget" data-items-xs="2" data-items-sm="3" data-items-lg="4" data-items-xl="5" data-lightbox="gallery">
+
+                    {% for certificate in certificates %}
+                    {% for img in certificate.img %}
+                        <div class="oc-item">
+                            <a href="{{img.getPath()}}" data-lightbox="gallery-item">
+                                <img src="{{img.getPath()}}">
+                            </a>
+                        </div>
+                    {% endfor %}
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+        <div class="section  mt-0  nopadding" style="">
+            <div class="container clearfix">
+                <div class="row common-height clearfix">
+
+
+                    <div class="col-lg-6 py-0 pe-5">
+
+                        <div class="vertical-middle clearfix leftpadding rightpadding">
+                            <h3 class="t400" style="">О компании</h3>
+                            <p class="t300 item-option_3 field_text"><p class='mb-4  text-start'>Компания ООО «СДМ» — поставщик дорожно-строительной техники и коммерческого транспорта на территории СЗФО. Мы осуществляем реализацию машин с 2008 года. Предлагаем выгодные решения для бизнеса наших клиентов, куда входит гарантийное и послегарантийное сопровождение каждой отдельной техники в автопарке.</p></p>
+                            <p class="nobottommargin"><a href="/about" class="button btn ms-0  item-option_1 field_button_text">Подробнее</a></p>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+        <div class="section bg-white p-0" style="
+
+margin-top:unset;
+margin-bottom:unset;
+">
+            <div class="" style="background-color: rgba(0, 0, 0, 0);
+
+padding-bottom:60px;
+    ">
+
+
+                <div class="container clearfix">
+
+                    <h3 class="t400 text-center " style="">Наши партнеры</h3>
+                    <div id="oc-clients" class="owl-carousel image-carousel carousel-widget mt-5" data-margin="20" data-nav="false" data-pagi="true" data-items-xs="2" data-items-sm="3" data-items-md="4" data-items-lg="5" data-items-xl="6">
+                        {% for brand in brands  %}
+                        {% for img in brand.img %}
+                        <div class="oc-item"><a target="_blank" href="#" title="Фото бренда"><img alt="Фото бренда" src="{{img.getPath()}}"></a></div>
+                        {% endfor %}
+                        {% endfor %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

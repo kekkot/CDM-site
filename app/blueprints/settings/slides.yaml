@@ -1,0 +1,28 @@
+uuid: 75f7c3df-b9bb-42be-9b04-8ea94c0c46af
+handle: Settings\Slides
+type: entry
+name: Слайды
+drafts: false
+
+primaryNavigation:
+    label: Настройки сайта
+    icon: icon-magic
+    order: 110
+
+navigation:
+    parent: Settings\Slides
+    icon: icon-magic
+    order: 10 
+
+fields:
+    img:
+        label: Баннер
+        type: fileupload
+        mode: image
+    title:
+        label: Заголовок
+        type: text
+    description:
+        label: Текст
+        type: textarea
+        size: small

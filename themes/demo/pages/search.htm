@@ -1,0 +1,19 @@
+url = "/search"
+title = "Поиск"
+layout = "default"
+
+==
+<section id="content">
+    <div class="content-wrap py-0 mx-auto" {% if obProduct is not empty %} style="max-width: 960px" {% endif %}>
+        {% partial 'breadcrubs' %}
+        <div class="container mt-2 mb-5">
+            <div class="row">
+                <div  class="col-lg-12" >
+                    {% partial 'product/search/search-result' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

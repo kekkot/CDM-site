@@ -1,0 +1,61 @@
+url = "/catalog/:category*/:slug?"
+layout = "default"
+title = "Категория"
+meta_title = "Строительная спецтехника: Лучший выбор для вашего строительного проекта"
+meta_description = "Магазин строительной спецтехники предлагает широкий ассортимент высококачественной техники для строительных проектов. У нас вы найдете экскаваторы, погрузчики, бульдозеры, краны и другую специализированную технику от ведущих производителей. Наша строительная спецтехника обеспечит эффективность и надежность в выполнении различных задач. Мы предлагаем конкурентные цены, профессиональную консультацию и гарантированное качество. Покупайте строительную спецтехнику у нас и достигайте высоких результатов в ваших строительных проектах!"
+
+[Catalog]
+
+[CategoryPage]
+slug = "{{ :slug }}"
+slug_required = 0
+smart_url_check = 1
+has_wildcard = 0
+skip_error = 1
+
+[CategoryPage MainCategoryPage]
+slug = "{{ :category }}"
+slug_required = 1
+smart_url_check = 1
+has_wildcard = 0
+skip_error = 0
+
+[ProductPage]
+slug = "{{ :slug }}"
+slug_required = 0
+smart_url_check = 1
+skip_error = 1
+
+[ProductList]
+sorting = "no"
+
+[ProductData]
+
+[BrandList]
+==
+{% set obBrandList = BrandList.make().active() %}
+{% set obCategoryList = CategoryList.make().tree() %}
+
+ 
+ 
+<section id="content" >
+    <div class="content-wrap py-0 mx-auto" {% if obProduct is not empty %} style="max-width: 960px" {% endif %}>
+        {% partial 'breadcrubs' %}
+        <div class="container mt-2 mb-5">
+            <div class="row">
+                {% if obProduct is empty %}
+                <div class="col-lg-3 ">
+                    {% partial 'sideMenu' %}
+                </div>
+                {% endif %}
+                <div {% if obProduct is not empty %} class="col-lg-12" {% else %} class="col-lg-9" {% endif %}>
+                    {% if obProduct is not empty %}
+                    {% partial 'product-page' %}
+                    {% else %} 
+                    {% partial 'catalog' %} 
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

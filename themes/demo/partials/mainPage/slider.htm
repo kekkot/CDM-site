@@ -1,0 +1,28 @@
+<section id="slider" class="slider-element slider-parallax swiper_wrapper min-vh-60" data-loop="true" data-autoplay="5000"> <!-- data-loop="true" -->
+
+    <div class="swiper-container swiper-parent">
+        <div class="swiper-wrapper">
+        {% for slide in slides  %}
+
+            <div class="swiper-slide">
+                <div class="container">
+                    <div class="slider-caption slider-caption-left">
+                        <div>
+                            <h2 class="slide-text">Продажа спец техники от производителя</h2>
+                            <div class="text-center me-0 w-auto p-0">
+                                <button class="button button-large button-rounded">Перейти в каталог</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% for img in slide.img %}
+                <div class="swiper-slide-bg" style="background-image: url('{{img.getPath()}}'); background-position: center center;"></div>
+                 {% endfor %}
+            </div>
+        {% endfor %}
+        </div>
+        <div class="slider-arrow-left"><i class="icon-angle-left"></i></div>
+        <div class="slider-arrow-right"><i class="icon-angle-right"></i></div>
+    </div>
+
+</section>

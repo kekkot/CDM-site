@@ -1,0 +1,21 @@
+uuid: a985be85-f79a-4693-80f0-c07c46920c25
+handle: Settings\Brands
+type: entry
+name: Слайдер брендов
+drafts: false
+
+primaryNavigation:
+    label: Слайдер с брендами
+    icon: icon-magic
+    order: 110
+    
+navigation:
+    parent: Settings\Brands
+    icon: icon-magic
+    order: 10
+
+fields:
+    img:
+        label: Изображения
+        type: fileupload
+        mode: image

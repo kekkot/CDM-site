@@ -1,0 +1,17 @@
+url = "/modal"
+layout = "default"
+title = "Модуль"
+
+[MyModal]
+modalUnicName = "modal-1"
+modalPartial = "modalTest"
+modalTitle = "Обратный звонок"
+modalFooter = "/policy"
+==
+<?php
+function onModalUpdate(){
+return true;
+}
+?>
+==
+{% component 'MyModal' %}

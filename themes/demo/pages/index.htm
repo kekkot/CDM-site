@@ -1,0 +1,32 @@
+url = "/"
+layout = "default"
+title = "index"
+meta_title = "Спецтехника"
+meta_description = "Компания ООО «СДМ» является поставщиком дорожно-строительной техники и коммерческого транспорта. Продажа спецтехники по России на выгодных условиях."
+
+[resources]
+less[] = "pages/index.less"
+vars[howItsMadeCmsTemplate] = "cms:cms-page:index.htm"
+
+[CategoryData]
+
+[CategoryList]
+
+[collection obCert]
+handle = "Settings\Licenses"
+
+[collection obBrandsSlide]
+handle = "Settings\Brands"
+
+[collection obSlides]
+handle = "Settings\Slides"
+==
+{% set obCategoryList = CategoryData.get(1) %}
+{% set certificates = obCert.get()  %}
+{% set brands = obBrandsSlide.get()  %}
+{% set slides = obSlides.get()  %}
+ 
+
+
+{% partial 'mainPage/slider.htm' %}
+{% partial 'mainPage/block-1.htm' %}

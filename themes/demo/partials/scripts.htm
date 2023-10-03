@@ -1,0 +1,31 @@
+{% framework extras   %}
+{% scripts %}
+
+<script src="/themes/demo/assets/js/jquery.js"></script>
+<script src="/themes/demo/assets/js/plugins.min.js"></script>
+<script>
+    window.data = {
+        siteurl: 'https://sdm-auto.ru',
+        page_url: 'https://sdm-auto.ru',
+    };
+    window.api_done_functions = {};
+</script>
+<script src="/themes/demo/assets/js/functions.js"></script>
+
+<script src="/themes/demo/assets/js/imask.js"></script>
+
+{% if this.page.id == 'catalog-categoryPage' %}
+      <script>
+      console.log('123');
+    var swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+{% endif  %}

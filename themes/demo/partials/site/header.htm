@@ -1,0 +1,98 @@
+<div id="top-bar">
+    <div class="container clearfix">
+
+        <div class="row justify-content-center justify-content-lg-between flex-column flex-lg-row">
+            <div class="col-12 col-md-auto d-flex align-items-center justify-content-center py-2 py-lg-0">
+
+                <!-- Top Social
+                ============================================= -->
+                <i class="icon-location m-0 me-1 "> </i><a href="" class="link-dark">г. Санкт-Петербург,  ул. Софийская, дом 72</a>
+
+            </div>
+
+            <div class="col-12 col-md-auto">
+
+                <!-- Top Links
+                ============================================= -->
+                <div class="top-links d-none d-md-block">
+                    <ul class="top-links-container">
+                        <li class="top-links-item"><a  href="/about">О компании</a></li>
+                        <li class="top-links-item"><a  href="/promo">Акции</a></li>
+                        <li class="top-links-item"><a  href="/lizing">Лизинг</a></li>
+                        <li class="top-links-item"><a  href="/vakansii">Вакансии</a></li>
+                        <li class="top-links-item"><a  href="/contacts">Контакты</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="header-row justify-content-center justify-content-lg-between" >
+
+        <!-- Logo
+        ============================================= -->
+        <div id="logo" class="ms-auto ms-lg-0 me-lg-auto">
+            <a href="/" class="standard-logo"><img src="/storage/app/media/logo-sdm.png"></a>
+            <a href="/" class="retina-logo"><img src="/storage/app/media/logo-sdm.png"></a>
+        </div>
+        <!-- #logo end
+
+                            <div id="logo" class="ms-auto ms-lg-0 me-lg-auto flex-column align-items-start py-3">
+                                <a href="/" class="" style="font-size: 28px" >ООО &amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;quot;СДМ&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;quot;</a>
+                                <div class="">Спецтехника</div>
+                            </div>-->
+
+
+        <div class="d-flex flex-column flex-lg-row mb-3 mb-md-0">
+
+            <div class="text-center me-0 me-md-3">
+                <button id="openModal" data-modal-id="{{MyModal.properties.modalUnicName}}" data-partial="{{MyModal.properties.modalPartial}}" class="button button-large button-rounded">Подобрать технику</button>
+            </div>
+
+            <div class="d-flex align-items-center">
+                <i class="i-plain icon-call m-0 me-1 "></i> <a class="link-dark" style="font-size: 24px; font-weight: bold" href="tel:88005509465">8-800-550-94-65</a>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<div id="header-wrap">
+    <div class="container">
+        <div class="header-row   flex-lg-row justify-content-between">
+            <div id="primary-menu-trigger">
+                <svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>
+            </div>
+
+
+
+            <div class="header-misc">
+
+                <!-- Top Search
+                ============================================= -->
+                <div id="top-search" class="header-misc-icon ms-0">
+                    <a href="#" id="top-search-trigger"><i class="icon-line-search"></i><i class="icon-line-cross"></i></a>
+                </div><!-- #top-search end -->
+
+            </div>
+
+
+
+            {% partial 'site/nav' %}
+
+
+
+            <form class="top-search-form" action="/search" method="get">
+                <input type="text" name="search" class="form-control" value="" placeholder="Поиск.." autocomplete="off">
+            </form>
+
+        </div>
+    </div>
+</div>
+<div class="header-wrap-clone"></div>

@@ -1,0 +1,110 @@
+description = "Default layout"
+
+[CategoryList]
+
+[BrandList]
+
+[MyModal]
+modalUnicName = "modal-1"
+modalPartial = "modalCallback"
+modalTitle = "Заявка на консультацию"
+modalFooter = "/policy"
+
+[MyModal addCart]
+modalUnicName = "modal-3"
+modalPartial = "modalCallback"
+modalTitle = "Уточнить актуальную стоимость"
+modalFooter = "/policy"
+
+[genericForm callback]
+rules[phone] = "required"
+rules_messages[required] = "Заполните номер телефона"
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+mail_enabled = 1
+mail_subject = "Сообщение с сайта (показать технику)"
+mail_recipients[info@sdm-auto.ru] = "info@sdm-auto.ru"
+reset_form = 1
+redirect = "/thanks"
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+
+[genericForm lizingCallback]
+rules[phone] = "required"
+rules_messages[required] = "Заполните номер телефона"
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+mail_enabled = 1
+mail_subject = "Сообщение с сайта (лизинг)"
+mail_recipients[info@sdm-auto.ru] = "info@sdm-auto.ru"
+reset_form = 1
+redirect = "/thanks"
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+
+[genericForm productCallback]
+rules[phone] = "required"
+rules_messages[required] = "Заполните номер телефона"
+messages_success = "Ваша форма была успешно отправлена!"
+messages_errors = "В вашей заявке содержатся ошибки."
+mail_enabled = 1
+mail_subject = "Обращение с сайта (товар)"
+mail_recipients[info@sdm-auto.ru] = "info@sdm-auto.ru"
+reset_form = 1
+redirect = "/thanks"
+inline_errors = "disabled"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
+==
+<?php
+function onModalUpdate(){
+    $this['title'] = post('title');
+}
+?>
+==
+{% set obCategoryList = CategoryList.make().tree() %}
+
+{% set obBrandList = BrandList.make().active() %}
+
+
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU">
+    <head>
+        {% partial 'site/meta' %}
+    </head>
+    <body class="stretched {{ 'page-'~this.page.id }}">
+    <div id="wrapper" class="clearfix">
+        <!-- Header -->
+        <header id="header" class="header-size-sm" data-sticky-shrink="false">
+            {% partial 'site/headerNew' %}
+        </header>
+
+        <!-- Content -->
+        <section id="layout-content">
+            {% page %}
+
+            {% partial 'modal' %}
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer" class="dark">
+            {% partial 'site/footer' %}
+        </footer>
+    </div>
+
+    </body>
+</html>

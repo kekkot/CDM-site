@@ -1,0 +1,68 @@
+<form id="catForm" data-request="onReload" > 
+                        <div class="mb-3 _required custom-select" id="showBrand" data-brand="{{obBrand.id}}"
+                        style="
+                        width: 100%;    
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        justify-content: space-around;">
+                        {% set uniqProductList = [] %}
+                        {% for item in obCategoryTemp.children %}
+                        {% if item.id in category and item.id not in uniqProductList %}
+                        {% set uniqProductList = uniqProductList|merge([item.id]) %}
+                        {% set obProductCat = CategoryData.get(item.id) %}
+                        {% set obProductImg = ProductList.make().category(item.id).brand(obBrand.id).first().preview_image.path %}
+                            
+
+
+
+                            <div class="col-sm-6 col-lg-4" style="max-width: 290px;     margin: 0 5px 20px 5px;">
+                            <img src="{{obProductImg}}" alt="{{item.name}}"> 
+                                <a href="?cat={{item.id}}#reload" class="feature-box media-box border rounded shadow-sm" style="padding: 15px; display:block;
+                                {% if item.id == ObcategoryFilter %}
+                                border: 2px solid #F18052!important;
+                                {% endif %}
+                                "> 
+                                    <div class="fbox-content px-0 text-center">
+                                        <h2 style="font-size: 20px;">{{item.name}}</h2> 
+                                    </div>
+                                </a>
+                            </div>
+                        {% endif %}
+                        {% endfor %}
+
+                
+                         {% set obCategoryTemp = CategoryData.get(13)  %} 
+                        {% for item in obCategoryTemp.children %}   
+                        {% if item.id in category  %} 
+                        {% set obProductCat = CategoryData.get(item.id) %}
+                        {% set obProductImg = ProductList.make().category(item.id).brand(obBrand.id).first().preview_image.path %}
+                            
+
+
+
+                            <div class="col-sm-6 col-lg-4" style="max-width: 290px;     margin: 0 5px 20px 5px;">
+                            <img src="{{obProductImg}}" alt="{{item.name}}"> 
+                                <a href="?cat={{item.id}}#reload" class="feature-box media-box border rounded shadow-sm" style="padding: 15px; display:block;
+                                {% if item.id == ObcategoryFilter %}
+                                border: 2px solid #F18052!important;
+                                {% endif %}
+                                "> 
+                                    <div class="fbox-content px-0 text-center">
+                                        <h2 style="font-size: 20px;">{{item.name}}</h2> 
+                                    </div>
+                                </a>
+                            </div>
+                        {% endif %}
+                        {% endfor %}
+                            {# <select type="text" name="name" id="select" class="form-control" style="max-width: 250px;">
+                                <option value="all" disabled selected>Вся техника бренда {{obBrand.name}}</option>  
+                                {% for item in obCategoryTemp.children %}
+                               
+                                {% if item.id in category  %}
+                                    <option value="{{item.id}}">{{item.name}}</option>
+                                {% endif %}
+                                {% endfor %}
+                            </select> #}
+                        </div> 
+                    </form>

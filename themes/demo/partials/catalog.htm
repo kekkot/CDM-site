@@ -1,0 +1,42 @@
+[BrandData]
+
+[ProductList]
+sorting = "no"
+
+[CategoryData]
+==
+{% if filteredList is not empty %}   
+{% set obProductListTemp = ProductList.make().active().brand(brandId) %} 
+{% set obProductList = obProductListTemp.category(filteredList) %}
+ 
+{% endif %} 
+ 
+{% if obBrands.count() > 1 %}
+  <div class="container brands">
+  {% for obBrand in obBrands %}
+    <a class="card" href="/brand/{{obBrand.name}}?cat={{obActiveCategoryItem.id}}#reload">
+      <img src="{{obBrand.preview_image.path}}" alt="Логотип" class="logo">
+      <span class="company-name">{{obBrand.name}}</span>
+    </a> 
+   {% endfor %}
+  </div>
+{% elseif ObcategoryFilter is empty  %}
+<div class="row" id="reload">
+    {% for obProduct in obProductList %}
+    <div class="col-md-4 mb-3">
+        {% partial 'product/product-card' %}
+     </div>
+    {% endfor %}
+</div>
+
+{% endif %}
+
+{% if ObcategoryFilter is not empty %}
+<div class="row" id="reload">
+    {% for obProduct in obProductList %}
+    <div class="col-md-4 mb-3">
+        {% partial 'product/product-card' %}
+     </div>
+    {% endfor %}
+</div>
+{% endif %}

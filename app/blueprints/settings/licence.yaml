@@ -1,0 +1,16 @@
+uuid: 7abc2e2b-4e95-4061-9984-9480232840f3
+handle: Settings\Licenses
+type: entry
+name: Сертификаты 
+drafts: false
+ 
+navigation:
+    parent: Settings\Slides
+    icon: icon-magic
+    order: 10 
+
+fields:
+    img:
+        label: Изображения
+        type: fileupload
+        mode: image

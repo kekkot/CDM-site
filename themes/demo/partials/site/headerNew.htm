@@ -1,0 +1,49 @@
+<div id="top-bar" class="p-0 row flex-lg-row align-items-center position-relative flex-nowrap">
+
+    <div class="logo-cont p-0 col-12 col-md-auto d-flex align-items-center justify-content-center align-self-start">
+
+        <!-- Logo
+        ============================================= -->
+        <div id="logo" class="ms-auto ms-lg-0 me-lg-auto">
+            <a href="/" class="standard-logo"><img src="/storage/app/media/logo-sdm.png"></a>
+            <a href="/" class="retina-logo"><img src="/storage/app/media/logo-sdm.png"></a>
+        </div>
+
+    </div>
+    <!-- Top Links
+    ============================================= -->
+    <div class="top-links d-none d-md-block">
+        <ul class="top-links-container">
+            <li class="top-links-item"><a  href="/promo">Акции</a></li>
+            <li class="top-links-item"><a  href="/about">О компании</a></li>
+            <li class="top-links-item"><a  href="/lizing">Лизинг</a></li>
+            <li class="top-links-item"><a  href="/vakansii">Вакансии</a></li>
+            <li class="top-links-item"><a  href="/contacts">Контакты</a></li>
+        </ul>
+    </div>
+    <div class="row w-auto ms-auto">
+        <div class="top-links-geo col-12 col-md-auto d-flex align-items-center justify-content-center py-2 py-lg-0">
+
+            <a href="" class="link-dark">г. Санкт-Петербург</a>
+
+        </div>
+
+        <div class="header-misc">
+
+            <!-- Top Search
+            ============================================= -->
+            <div id="top-search" class="header-misc-icon ms-0">
+                <a href="#" id="top-search-trigger"><i class="icon-line-search"></i><i class="icon-line-cross"></i></a>
+            </div><!-- #top-search end -->
+
+        </div>
+
+        <div class="text-center me-0 w-auto p-0">
+            <button id="openModal" data-modal-id="{{MyModal.properties.modalUnicName}}" data-partial="{{MyModal.properties.modalPartial}}" class="button button-large button-rounded">Нужна консультация</button>
+        </div>
+    </div>
+
+    <form class="top-search-form" action="/search" method="get">
+        <input type="text" name="search" class="form-control" value="" placeholder="Поиск.." autocomplete="off">
+    </form>
+</div>

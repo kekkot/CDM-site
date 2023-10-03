@@ -1,0 +1,23 @@
+<div class="card course-card hover-effect noborder">
+        <a href="{{obProduct.getPageUrl('catalog/categoryPage')}}">
+            <img style="object-fit: cover; height: 300px" class="card-img-top"
+                 src="{{obProduct.preview_image.path}}"></a>
+        <div class="card-body py-2">
+            <h4 class="card-title t700 mb-2  d-flex ">
+                <a class="link-dark" href="{{obProduct.getPageUrl('catalog/categoryPage')}}">
+                    {{obProduct.name}}</a></h4>
+            <div class=" ">
+                <small>
+                    {{obProduct.preview_text|raw}}
+                </small>
+            </div>
+         <small>
+         {# <table class="table smaller-70 mb-1"><tbody><tr><td>Бренд</td><td class="text-end">{{obProduct.brand.name}}</td></tr></tbody></table> #}
+         </small>
+         </div>
+        <div class="card-footer pt-0 pb-3 bg-white border-top-0 ">
+            <a href="{{obProduct.getPageUrl('catalog/categoryPage')}}"
+               class="button button-rounded w-100 text-center ms-0 button-border button-border-thin button-primary
+                   position-relative">Подробности</a>
+        </div>
+    </div>

@@ -1,0 +1,120 @@
+url = "/brand/:brand"
+layout = "default"
+title = "Категория бренда"
+meta_title = "Каталог строительной спецтехники: Широкий выбор для любого строительного проекта"
+meta_description = "Исследуйте наш обширный каталог строительной спецтехники, предлагающий разнообразные решения для вашего строительного проекта. У нас вы найдете экскаваторы, погрузчики, бульдозеры, краны и другую специализированную технику от ведущих производителей. Наш каталог предлагает широкий выбор моделей, от компактных машин до крупногабаритной техники, чтобы удовлетворить любые потребности. Каждый продукт сопровождается подробным описанием, техническими характеристиками и фотографиями. Наша строительная спецтехника обеспечивает надежность, эффективность и высокую производительность. Просмотрите наш каталог и найдите идеальную технику для вашего строительного проекта уже сегодня!"
+
+[BrandPage]
+slug = "{{ :brand }}"
+slug_required = 0
+smart_url_check = 1
+skip_error = 1
+
+[ProductList]
+sorting = "no"
+
+[CategoryData]
+==
+<?php
+public function onStart(){  
+    $this['ObcategoryFilter'] = Input::get('cat');  
+    $this['ObcategoriesBrand'] = request('cat');  
+    
+}
+
+public function onReload(){  
+    $this['filteredList'] = request('data');  
+    $this['brandId'] = request('brand');  
+
+}
+?>
+==
+{% set obBrand = BrandPage.get() %}
+{% set obProductList = ProductList.make().active().brand(obBrand.id) %}
+ 
+{% set category = [] %}
+
+{% for obProductCategoies in obProductList %} 
+    {% set categoryId = obProductCategoies.category.id %}
+    {% if categoryId not in category %}
+        {% set category = category|merge([categoryId]) %}
+    {% endif %}
+{% endfor %}   
+
+{% set obBrandList = BrandList.make().active() %} 
+{% set obCategoryList = CategoryList.make().tree() %} 
+
+ {% set obCategoryTemp = CategoryData.get(1)  %} 
+  {% set obCategory = CategoryPage.get() %}
+
+
+
+<section id="content">
+    <div class="content-wrap py-0 mx-auto" {% if obProduct is not empty %} style="max-width: 960px" {% endif %}>
+        <div class="container py-4  ">
+            <div class="d-flex align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="mb-2">
+                    <a class="link-dark" href="/">Главная</a>
+                    <span class="mx-1">/</span>
+                    {{ obBrand.name }}
+                </div>
+            </div>
+        </div>
+        <div class="container mt-2 mb-5">
+            <div class="row">
+                <div class="col-lg-3 ">
+                    {% partial 'sideMenu' %}
+                </div>
+                <div class="col-lg-9">
+                    {% partial 'brand/description' %} 
+                    
+                    {# <form id="catForm" data-request="onReload"> 
+                        <div class="mb-3 _required custom-select" id="showBrand" data-brand="{{obBrand.id}}">
+                            <select type="text" name="name" id="select" class="form-control" style="max-width: 250px;">
+                                <option value="all" disabled selected>Вся техника бренда {{obBrand.name}}</option>  
+                                {% for item in obCategoryTemp.children %}
+                               
+                                {% if item.id in category  %}
+                                    <option value="{{item.id}}">{{item.name}}</option>
+                                {% endif %}
+                                {% endfor %}
+                            </select>
+                        </div> 
+                    </form> #}
+
+                    {% set obProductListTemp = ProductList.make().active().brand(obBrand.id) %} 
+                    
+       
+
+                    {% if ObcategoryFilter is not empty and ObcategoryFilter > 0 %}
+                    {% set obProductList = obProductListTemp.category(ObcategoryFilter) %}
+     
+                    {# {% partial 'brand/categories'  %}  #} 
+                    {% partial 'catalog' obProductList=obProductList  %}
+                    {% else %} 
+                    {% partial 'brand/categories' %} 
+                    {% endif %}
+
+                    
+
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+var catForm = document.getElementById("catForm");
+catForm.addEventListener("change", function() { 
+  var catSelect = document.getElementById("select");  
+  var brandSelect = document.getElementById("showBrand").dataset.brand; 
+  var selectedValue = catSelect.value; 
+        oc.request('#catForm', 'onReload', {  
+            data: { data: selectedValue, brand: 3 }, 
+            update: { 'catalog': '#reload' }
+        })
+});
+ 
+</script>
