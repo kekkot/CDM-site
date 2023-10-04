@@ -1,13 +1,13 @@
 
 <div>
-    <form data-request="callback::onFormSubmit">
+    <form data-request="callback::onFormSubmit" class="d-flex flex-column align-items-baseline">
         {{ form_token() }}
         <div id="callback_forms_flash"></div>
         <p class="modal-body-text">Данные для связи</p>
-        <div class="mb-3 _required  ">
+        <div class="mb-3 _required w-100 ">
             <input type="text" name="name" id="name" class="form-control modal-form-control" placeholder="Ваше имя">
         </div>
-        <div class="mb-3 _required  ">
+        <div class="mb-3 _required w-100 ">
             <input type="phone" name="phone" id="phone" class="form-control modal-form-control" placeholder="Номер телефона">
         </div>
         {% if title is not empty and title != 'empty'%}
@@ -15,11 +15,15 @@
             <input type="text" name="product" id="product" class="form-control modal-form-control" value="{{title}}" disabled>
         </div>
          {% endif %}
-        <div class="modal_footer">
-            При заполнении формы даю согласие на обработку персональных данных в соответствии
-            с <a href="{{modalFooter}}">политикой конфиденциальности сайта</a>
+        <div class="check-footer-modal row flex-nowrap align-items-center w-100">
+            <input type="checkbox" class="w-auto">
+            <div class="modal_footer">
+                При заполнении формы даю согласие на обработку персональных данных в соответствии
+                с <a href="{{modalFooter}}">политикой конфиденциальности сайта</a>
+            </div>
         </div>
-        <div class="button-container">
+
+        <div class="button-container button-text-size">
             <button class="button button_modal button_modal_cancle" type="submit"  id="simpleContactSubmitButton">Отмена</button>
             <button class="button button_modal" type="submit"  id="simpleContactSubmitButton">Отправить</button>
         </div>

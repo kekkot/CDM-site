@@ -54,6 +54,8 @@ button * {
 .modal_footer {
     max-width: 480px;
     margin: auto;
-    font-size: 14px;
-    margin-bottom: 15px;
+    font-size: 10px;
+    padding: 0px;
+    margin-left: 12px;
+    flex-shrink: initial;
 }

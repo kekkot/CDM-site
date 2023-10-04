@@ -14450,7 +14450,11 @@ body:not(.device-touch) #gotoTop {
     width: 48px;
     height: 48px;
     border-radius: 45px;
-    border: 1px solid #000000;
+    border: 8px solid #E4E7EC;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .modal-header{
     padding: 24px;
@@ -14465,6 +14469,12 @@ body:not(.device-touch) #gotoTop {
 }
 .form-control{
     border-radius: 8px;
+}
+.check-footer-modal{
+    margin-bottom: 32px;
+}
+.button-text-size{
+    font-size: 16px;
 }
 @media (max-width: 1438px) {
     #header{
