@@ -14425,10 +14425,6 @@ body:not(.device-touch) #gotoTop {
     margin-left: 140px;
     color: #F18052;
 }
-/*.cart-block{
-    height: 300px;
-    margin-bottom: 80px;
-}*/
 .button-container{
     display: flex;
     justify-content: space-between;
@@ -14475,6 +14471,76 @@ body:not(.device-touch) #gotoTop {
 }
 .button-text-size{
     font-size: 16px;
+}
+.cart-item{
+    width: 22%;
+}
+.vakansii-page{
+    margin-left: 130px;
+    padding-top: 80px;
+}
+.vakansii-page__title{
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 115px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin: 0;
+}
+.breadcrumb-2{
+    list-style-type: none;
+    display: flex;
+}
+.breadcrumb-2__item{
+    position: relative;
+    margin-right: 8px;
+}
+.breadcrumb-2__link{
+    font-family: Mulish;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #667085;
+    padding-left: 32px;
+    margin-right: 14px;
+}
+.breadcrumb-2__item:last-child{
+    cursor: default;
+}
+.breadcrumb-2__item:last-child:hover a{
+    color: #667085;
+}
+.breadcrumb-2__item:not(:last-child):after,
+.breadcrumb-2__item:not(:last-child):before{
+    border-right: 3px solid #BFE2FF;
+    content: '';
+    display: block;
+    height: 4px;
+    position: absolute;
+    right: 0;
+    top: 35%;
+    width: fit-content;
+    transform: skewX(45deg);
+    cursor: default;
+}
+.breadcrumb-2__item:not(:last-child):after{
+    bottom: 35%;
+    top: auto;
+    transform: skewX(-45deg);
+}
+.breadcrumb-2__item--home{
+    background: url("../../assets/images/home.png");
+    background-size: 24px;
+    background-position: 0;
+    background-repeat: no-repeat;
+}
+.breadcrumb-2__item--lizing{
+    background: url("../../assets/images/file.png");
+    background-size: 24px;
+    background-position: 0;
+    background-repeat: no-repeat;
 }
 @media (max-width: 1438px) {
     #header{
