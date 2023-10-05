@@ -14486,6 +14486,8 @@ body:not(.device-touch) #gotoTop {
     letter-spacing: 0em;
     text-align: left;
     margin: 0;
+    margin-bottom: 40px;
+    color: #F18052;
 }
 .breadcrumb-2{
     list-style-type: none;
@@ -14548,10 +14550,6 @@ body:not(.device-touch) #gotoTop {
     margin-top: 40px;
     margin-bottom: 120px;
     width: 1370px;
-    padding-top: 70px;
-    padding-left: 70px;
-    padding-right: 168px;
-    padding-bottom: 50px;
     box-shadow:
         0px 30px 66px 0px #0000001A,
         0px 120px 120px 0px #00000017,
@@ -14561,10 +14559,24 @@ body:not(.device-touch) #gotoTop {
     font-family: Roboto;
     letter-spacing: 0em;
     text-align: left;
+}
+.page-text-container__cont--vakansii{
+    padding-top: 70px;
+    padding-left: 70px;
+    padding-right: 168px;
+    padding-bottom: 50px;
     background: url("../../assets/images/S D M.png");
     background-repeat: no-repeat;
     background-position: center;
     background-position-y: 70%;
+}
+.page-text-container__cont--contacts{
+    padding: 50px;
+
+    background: url("../../assets/images/S D M.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 50%;
 }
 .page-text-container__h2{
     font-size: 48px;
@@ -14599,8 +14611,59 @@ body:not(.device-touch) #gotoTop {
 .page-text-container__button .button{
     margin: 0;
 }
-.page-text-container__button:hover .button{
-    
+.contact-page__container{
+    display: flex;
+    justify-content: space-between;
+    font-family: Roboto;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.contact-page__container:not(:last-child){
+    margin-bottom: 50px;
+}
+.contact-page__addres-cont{
+    width: 35%;
+}
+.contact-page__addres-text{
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+}
+.contact-page__contact-text-cont{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.contact-page__text-bot{
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+.contact-page__text-top{
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+.contact-page__time-text{
+    margin-top: 40px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.contact-page__time-text span{
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.contact-page__map-cont{
+    width: 55%;
+    border-radius: 15px;
 }
 @media (max-width: 1438px) {
     #header{
