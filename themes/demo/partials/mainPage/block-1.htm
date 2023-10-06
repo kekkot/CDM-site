@@ -5,7 +5,7 @@
     <div class="content-wrap py-0">
         <div class="section my-0 bg-white">
             <div class="container clearfix">
-                <div class="row justify-content-between col-mb-50">
+                <div class="cart-item__cont row justify-content-between col-mb-50">
                     {% if obCategoryList.isNotEmpty() %}
                     {% for obCategory in obCategoryList.children %}
                     <div class="cart-item p-0 col-sm-6">
@@ -29,11 +29,65 @@
 
             </div>
         </div>
-        <div class="section  my-0 ">
-            <div class="container clearfix">
-                <div class="text-center title-border">
-                    <h3 class="fw-400 mb-5">Сертификаты</h3>
+        <div class="About-company-cont">
+            <div class="about-company-block-cont">
+                <div class="About-company__cont">
+                    <div class="About-company__text-block">
+                        <div class="About-company__img-cont">
+                            <img src="/themes/demo/assets/images/headset.png">
+                        </div>
+                        <div>
+                            <h3 class="About-company__title-block">Кругосуточная поддержка</h3>
+                            <p class="About-company__text-block">Наши специалисты всегда помогут Вам решить все проблемы</p>
+                        </div>
+                    </div>
+                    <div class="About-company__text-block">
+                        <div class="About-company__img-cont">
+                            <img src="/themes/demo/assets/images/building.png">
+                        </div>
+                        <div>
+                            <h3 class="About-company__title-block">Лучшие цены</h3>
+                            <p class="About-company__text-block">Мы предлагаем технику по самым выгодным ценам в России</p>
+                        </div>
+                    </div>
+                    <div class="About-company__text-block">
+                        <div class="About-company__img-cont">
+                            <img src="/themes/demo/assets/images/repeat.png">
+                        </div>
+                        <div>
+                            <h3 class="About-company__title-block">Гарантия на технику</h3>
+                            <p class="About-company__text-block">Заменим запчасть в случае поломки в период гарантийного срока</p>
+                        </div>
+                    </div>
                 </div>
+                <div class="About-company__cont">
+                    <div class="About-company__text-block">
+                        <h2 class="About-company__title">О компании</h2>
+                        <p class="About-company__text">
+                            Компания ООО «СДМ» — поставщик дорожно-строительной техники и коммерческого транспорта на территории СЗФО.
+                            Мы осуществляем реализацию машин с 2008 года. Предлагаем выгодные решения для бизнеса наших клиентов,
+                            куда входит гарантийное и послегарантийное сопровождение каждой отдельной техники в автопарке.
+                        </p>
+                        <div class="About-company__check-cont">
+                            <div class="check-round">✓</div>
+                            <p class="About-company__check-text">Вся поставляемая техника соответствует современным стандартам качества</p>
+                        </div>
+                        <div class="About-company__check-cont mt-0">
+                            <div class="check-round">✓</div>
+                            <p class="About-company__check-text">В наличии и под заказ оригинальные запасные части, а также из перечня допустимых замен</p>
+                        </div>
+                        <div class="About-company__button-cont">
+                            <button class="About-company__button">
+                                <div class="About-company__button-text">Перейти в каталог</div>
+                                <div>➜</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section  my-0 sert-block">
+            <div class="container clearfix">
 
                 <div id="oc-images" class="owl-carousel image-carousel carousel-widget" data-items-xs="2" data-items-sm="3" data-items-lg="4" data-items-xl="5" data-lightbox="gallery">
 
@@ -50,27 +104,6 @@
                 </div>
             </div>
         </div>
-        <div class="section  mt-0  nopadding" style="">
-            <div class="container clearfix">
-                <div class="row common-height clearfix">
-
-
-                    <div class="col-lg-6 py-0 pe-5">
-
-                        <div class="vertical-middle clearfix leftpadding rightpadding">
-                            <h3 class="t400" style="">О компании</h3>
-                            <p class="t300 item-option_3 field_text"><p class='mb-4  text-start'>Компания ООО «СДМ» — поставщик дорожно-строительной техники и коммерческого транспорта на территории СЗФО. Мы осуществляем реализацию машин с 2008 года. Предлагаем выгодные решения для бизнеса наших клиентов, куда входит гарантийное и послегарантийное сопровождение каждой отдельной техники в автопарке.</p></p>
-                            <p class="nobottommargin"><a href="/about" class="button btn ms-0  item-option_1 field_button_text">Подробнее</a></p>
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-        </div>
         <div class="section bg-white p-0" style="
 
 margin-top:unset;
@@ -84,7 +117,6 @@ padding-bottom:60px;
 
                 <div class="container clearfix">
 
-                    <h3 class="t400 text-center " style="">Наши партнеры</h3>
                     <div id="oc-clients" class="owl-carousel image-carousel carousel-widget mt-5" data-margin="20" data-nav="false" data-pagi="true" data-items-xs="2" data-items-sm="3" data-items-md="4" data-items-lg="5" data-items-xl="6">
                         {% for brand in brands  %}
                         {% for img in brand.img %}

@@ -14547,6 +14547,118 @@ body:not(.device-touch) #gotoTop {
 .cart-item__text h2{
     color: #F18052;
 }
+.cart-item__cont{
+    padding-bottom: 110px;
+}
+.About-company-cont{
+    width: 100%;
+    background: url("../../assets/images/Фон о компании.png");
+    padding-top: 250px;
+    padding-left: 235px;
+    padding-right: 235px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-position-x: center;
+}
+.About-company__cont{
+    background: #FFFFFF;
+    border-radius: 30px;
+    padding: 50px;
+    max-width: 100%;
+    box-shadow: 0px 10px 25px 0px #00000012;
+}
+.About-company__cont:not(:last-child){
+    margin-right: 50px;
+    max-width: 400px;
+    flex-shrink: 0;
+}
+.about-company-block-cont{
+    display: flex;
+    align-items: stretch;
+}
+.About-company__text-block{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.About-company__title-block{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #F18052;
+}
+.About-company__text-block{
+    font-family: Roboto;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #6E6E6E;
+}
+.About-company__img-cont{
+    margin-bottom: 25px;
+}
+.About-company__title{
+    font-family: Roboto;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #F18052;
+}
+.About-company__text{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #6E6E6E;
+}
+.About-company__check-cont{
+    display: flex;
+    margin-top: 35px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 18px;
+}
+.check-round{
+    width: 20px;
+    height: 20px;
+    background: #173D8F;
+    border-radius: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    margin-right: 15px;
+}
+.About-company__check-text{
+    margin: 0;
+    padding: 0;
+}
+.About-company__button-cont{
+    margin-top: 35px;
+}
+.About-company__button{
+    padding: 15px 35px;
+    border-radius: 30px;
+    background: #F18052;
+    color: #FFFFFF;
+    border: 0px;
+    display: flex;
+}
+.About-company__button-text{
+    margin-right: 10px;
+}
+.sert-block{
+    margin-top: 120px!important;
+}
 .vakansii-page{
     margin-left: 130px;
     padding-top: 80px;
