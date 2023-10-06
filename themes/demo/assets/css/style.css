@@ -14665,6 +14665,44 @@ body:not(.device-touch) #gotoTop {
     width: 55%;
     border-radius: 15px;
 }
+.round-number{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 45px;
+    background: #F18052;
+    width: 60px;
+    height: 60px;
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 42px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+.lizing .contact-page__contact-text-cont{
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.lizing .contact-page__contact-cont{
+    margin-left: 24px;
+}
+.lizing .page-text-container__button{
+    margin-bottom: 40px;
+}
+.lizing .button-container{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.lizing .button_modal{
+    border-radius: 5px;
+    border-color: #F18052;
+}
+.lizing .page-button{
+    padding: 15px 44px!important;
+    font-size: 24px;
+}
 @media (max-width: 1438px) {
     #header{
         margin: 0 1rem;
