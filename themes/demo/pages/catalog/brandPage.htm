@@ -16,40 +16,54 @@ sorting = "no"
 [CategoryData]
 ==
 <?php
-public function onStart(){  
-    $this['ObcategoryFilter'] = Input::get('cat');  
-    $this['ObcategoriesBrand'] = request('cat');  
-    
+public function onStart(){
+    $this['ObcategoryFilter'] = Input::get('cat');
+    $this['ObcategoriesBrand'] = request('cat');
+
 }
 
-public function onReload(){  
-    $this['filteredList'] = request('data');  
-    $this['brandId'] = request('brand');  
+public function onReload(){
+    $this['filteredList'] = request('data');
+    $this['brandId'] = request('brand');
 
 }
 ?>
 ==
 {% set obBrand = BrandPage.get() %}
 {% set obProductList = ProductList.make().active().brand(obBrand.id) %}
- 
+
 {% set category = [] %}
 
-{% for obProductCategoies in obProductList %} 
+{% for obProductCategoies in obProductList %}
     {% set categoryId = obProductCategoies.category.id %}
     {% if categoryId not in category %}
         {% set category = category|merge([categoryId]) %}
     {% endif %}
-{% endfor %}   
+{% endfor %}
 
-{% set obBrandList = BrandList.make().active() %} 
-{% set obCategoryList = CategoryList.make().tree() %} 
+{% set obBrandList = BrandList.make().active() %}
+{% set obCategoryList = CategoryList.make().tree() %}
 
- {% set obCategoryTemp = CategoryData.get(1)  %} 
+ {% set obCategoryTemp = CategoryData.get(1)  %}
   {% set obCategory = CategoryPage.get() %}
 
 
+<!--<section class="vakansii-page bg-white" >
 
-<section id="content">
+    <h1 class="vakansii-page__title">Лизинг</h1>
+    <div class="breadcrumb-2__cont">
+        <ul class="breadcrumb-2">
+            <li class="breadcrumb-2__item breadcrumb-2__item--home"><a class="breadcrumb-2__link" href="/">Главная</a></li>
+            <li class="breadcrumb-2__item breadcrumb-2__item--lizing"><a class="breadcrumb-2__link">Лизинг</a></li>
+        </ul>
+    </div>
+    <div class="page-text-container">
+        {% partial 'pages/lizing.htm' %}
+    </div>
+
+</section>-->
+<section id="content" class="vakansii-page bg-white">
+   <!-- <h1 class="vakansii-page__title">{{this.page.title}}</h1>-->
     <div class="content-wrap py-0 mx-auto" {% if obProduct is not empty %} style="max-width: 960px" {% endif %}>
         <div class="container py-4  ">
             <div class="d-flex align-items-center justify-content-between flex-column flex-sm-row">
@@ -66,39 +80,39 @@ public function onReload(){
                     {% partial 'sideMenu' %}
                 </div>
                 <div class="col-lg-9">
-                    {% partial 'brand/description' %} 
-                    
-                    {# <form id="catForm" data-request="onReload"> 
+                    {% partial 'brand/description' %}
+
+                    {# <form id="catForm" data-request="onReload">
                         <div class="mb-3 _required custom-select" id="showBrand" data-brand="{{obBrand.id}}">
                             <select type="text" name="name" id="select" class="form-control" style="max-width: 250px;">
-                                <option value="all" disabled selected>Вся техника бренда {{obBrand.name}}</option>  
+                                <option value="all" disabled selected>Вся техника бренда {{obBrand.name}}</option>
                                 {% for item in obCategoryTemp.children %}
-                               
+
                                 {% if item.id in category  %}
                                     <option value="{{item.id}}">{{item.name}}</option>
                                 {% endif %}
                                 {% endfor %}
                             </select>
-                        </div> 
+                        </div>
                     </form> #}
 
-                    {% set obProductListTemp = ProductList.make().active().brand(obBrand.id) %} 
-                    
-       
+                    {% set obProductListTemp = ProductList.make().active().brand(obBrand.id) %}
+
+
 
                     {% if ObcategoryFilter is not empty and ObcategoryFilter > 0 %}
                     {% set obProductList = obProductListTemp.category(ObcategoryFilter) %}
-     
-                    {# {% partial 'brand/categories'  %}  #} 
+
+                    {# {% partial 'brand/categories'  %}  #}
                     {% partial 'catalog' obProductList=obProductList  %}
-                    {% else %} 
-                    {% partial 'brand/categories' %} 
+                    {% else %}
+                    {% partial 'brand/categories' %}
                     {% endif %}
 
-                    
 
-                    
-                    
+
+
+
                 </div>
             </div>
         </div>
@@ -107,14 +121,14 @@ public function onReload(){
 
 <script>
 var catForm = document.getElementById("catForm");
-catForm.addEventListener("change", function() { 
-  var catSelect = document.getElementById("select");  
-  var brandSelect = document.getElementById("showBrand").dataset.brand; 
-  var selectedValue = catSelect.value; 
-        oc.request('#catForm', 'onReload', {  
-            data: { data: selectedValue, brand: 3 }, 
+catForm.addEventListener("change", function() {
+  var catSelect = document.getElementById("select");
+  var brandSelect = document.getElementById("showBrand").dataset.brand;
+  var selectedValue = catSelect.value;
+        oc.request('#catForm', 'onReload', {
+            data: { data: selectedValue, brand: 3 },
             update: { 'catalog': '#reload' }
         })
 });
- 
+
 </script>

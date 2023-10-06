@@ -14473,7 +14473,79 @@ body:not(.device-touch) #gotoTop {
     font-size: 16px;
 }
 .cart-item{
+    position: relative;
     width: 22%;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px solid #D3D3D3;
+    overflow: hidden;
+    box-shadow:
+        0px 10px 22px 0px #0000001A,
+        0px 40px 40px 0px #00000017,
+        0px 89px 54px 0px #0000000D,
+        0px 159px 63px 0px #00000003,
+        0px 248px 69px 0px #00000000;
+
+}
+.cart-item:hover{
+    box-shadow:
+        0px 10px 22px 0px #0000001A,
+        0px 40px 40px 0px #00000017,
+        0px 0px 0px 0px #0000000D,
+        0px 0px 0px 0px #00000003,
+        0px 0px 0px 0px #00000000;
+}
+.cart-item:not(:last-child){
+    margin-bottom: 80px;
+}
+.cart-item-shadow-menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+}
+.cart-item-shadow-menu__link{
+    padding: 6px 58px;
+    color: #000000;
+    background: #FFFFFF;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.cart-item:hover .cart-item-shadow-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cart-link{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.cart-item__text .cart-link{
+    align-items: center;
+}
+.cart-item-img-cont{
+    border-bottom: 1px solid #F18052;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 200px;
+}
+.cart-item__text{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cart-item__text h2{
+    color: #F18052;
 }
 .vakansii-page{
     margin-left: 130px;

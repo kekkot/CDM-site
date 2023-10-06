@@ -8,16 +8,19 @@
                 <div class="row justify-content-between col-mb-50">
                     {% if obCategoryList.isNotEmpty() %}
                     {% for obCategory in obCategoryList.children %}
-                    <div class="cart-item p-0 col-sm-6 m-auto">
-                        <div class="feature-box media-box border rounded shadow-sm">
-                            <div class="fbox-media p-0 m-0">
-                                <a class="cart-link" href="/catalog/{{obCategory.slug}}">
-                                    <img class="rounded" src="{{obCategory.preview_image.path}}" alt="{{obCategory.name}}">
-                                </a>
+                    <div class="cart-item p-0 col-sm-6">
+                        <div class="cart-item-shadow-menu">
+                            <div class="cart-item-shadow-menu__item">
+                                <a class="cart-item-shadow-menu__link">Все бренды</a>
                             </div>
-                            <div class="fbox-content px-0 text-center">
-                                <a href="/catalog/{{obCategory.slug}}"><h2>{{obCategory.name}}</h2></a>
-                            </div>
+                        </div>
+                        <div class="cart-item-img-cont fbox-media p-0 m-0">
+                            <a class="cart-link" href="/catalog/{{obCategory.slug}}">
+                                <img class="rounded" src="{{obCategory.preview_image.path}}" alt="{{obCategory.name}}">
+                            </a>
+                        </div>
+                        <div class="cart-item__text fbox-content px-0 text-center">
+                            <a class="cart-link" href="/catalog/{{obCategory.slug}}"><h2>{{obCategory.name}}</h2></a>
                         </div>
                     </div>
                     {% endfor %}
