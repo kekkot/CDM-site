@@ -5,19 +5,19 @@ sorting = "no"
 
 [CategoryData]
 ==
-{% if filteredList is not empty %}   
-{% set obProductListTemp = ProductList.make().active().brand(brandId) %} 
+{% if filteredList is not empty %}
+{% set obProductListTemp = ProductList.make().active().brand(brandId) %}
 {% set obProductList = obProductListTemp.category(filteredList) %}
- 
-{% endif %} 
- 
+
+{% endif %}
+
 {% if obBrands.count() > 1 %}
   <div class="container brands">
   {% for obBrand in obBrands %}
     <a class="card" href="/brand/{{obBrand.name}}?cat={{obActiveCategoryItem.id}}#reload">
       <img src="{{obBrand.preview_image.path}}" alt="Логотип" class="logo">
       <span class="company-name">{{obBrand.name}}</span>
-    </a> 
+    </a>
    {% endfor %}
   </div>
 {% elseif ObcategoryFilter is empty  %}

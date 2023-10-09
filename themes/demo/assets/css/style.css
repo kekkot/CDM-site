@@ -2741,7 +2741,6 @@ img.lazy:not([src]) {
 	width: 100%;
 	margin: 60px 0;
 	padding: 60px 0;
-	background-color: #F9F9F9;
 	overflow: hidden;
 }
 
@@ -12623,8 +12622,12 @@ blockquote.float-end {
 	position:relative;
 	overflow:hidden;
 	-webkit-transform:translate3d(0,0,0);
+    display:flex;
+    justify-content: center;
 }
-
+#oc-clients .owl-stage-outer{
+    display: block;
+}
 .owl-carousel.owl-loaded { display:block }
 
 .owl-carousel.owl-loading {
@@ -12647,6 +12650,10 @@ blockquote.float-end {
 	display:block;
 	width:100%;
 	-webkit-transform-style:preserve-3d;
+}
+
+#oc-clients .owl-item{
+    border: 2px solid #ABABAB;
 }
 
 .slider-element .owl-carousel .owl-item img { -webkit-transform-style: preserve-3d; }
@@ -14507,12 +14514,19 @@ body:not(.device-touch) #gotoTop {
     height: 100%;
     background: rgba(0,0,0,.5);
 }
+.cart-item-shadow-menu__item{
+    width: 258px;
+    margin-bottom: 20px;
+}
 .cart-item-shadow-menu__link{
+    width: 100%;
     padding: 6px 58px;
     color: #000000;
     background: #FFFFFF;
     border-radius: 15px;
     cursor: pointer;
+    text-align: center;
+    display: block;
 }
 .cart-item:hover .cart-item-shadow-menu{
     display: flex;
@@ -14886,6 +14900,150 @@ body:not(.device-touch) #gotoTop {
 .lizing .page-button{
     padding: 15px 44px!important;
     font-size: 24px;
+}
+.catalog-side-menu{
+    box-shadow:
+        0px 11px 24px 0px #0000001A,
+        0px 44px 44px 0px #00000017,
+        0px 99px 59px 0px #0000000D,
+        0px 175px 70px 0px #00000003,
+        0px 274px 77px 0px #00000000;
+    border-radius: 10px;
+    margin-bottom: 70px;
+}
+.catalog-side-menu--bot{
+    padding-bottom: 15px;
+}
+.catalog-side-menu__title{
+    background: #F18052;
+    font-family: Roboto;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 48px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-left: 30px;
+    color: #FFFFFF;
+    border-radius: 10px 10px 0 0;
+}
+.catalog-side-menu__title--bg-gray{
+    background: #999999;
+}
+.catalog-side-menu__item{
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #000000;
+    padding: 10px 0;
+    padding-left: 30px;
+}
+.catalog-side-menu__item:hover{
+    background: #F18052;
+    color: #FFFFFF;
+}
+.catalog-side-menu__link-cont{
+    display: flex;
+    flex-direction: column;
+}
+.catalog-side-menu__ul-item{
+    padding-left: 30px;
+    margin-bottom: 0;
+}
+.catalog-side-menu__ul-item,
+.catalog-side-menu__ulul-item,
+.catalog-side-menu__ululul-item{
+    list-style-type: none;
+    position: relative;
+    padding-right: 15px;
+}
+.catalog-side-menu__li-item{
+    margin: 20px 0;
+}
+.catalog-side-menu__li-item a{
+    font-family: Roboto;
+    font-size: 22px !important;
+    font-weight: 700;
+    line-height: 33px;
+    padding: 0;
+    color: #000000;
+}
+.catalog-side-menu__lili-item:not(:last-child),
+.catalog-side-menu__lilili-item{
+    margin-bottom: 15px;
+}
+.catalog-side-menu__lili-item a{
+    font-family: Roboto;
+    font-size: 20px !important;
+    font-weight: 400;
+    line-height: 30px;
+    padding: 0;
+    margin: 0;
+    color: #000000;
+}
+.catalog-side-menu__lilili-item{
+    display: flex;
+    align-items: center;
+}
+.catalog-side-menu__lilili-item::before{
+    content: '';
+    display: inline-block;
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    color: #000000;
+    background: #000000;
+}
+.catalog-side-menu__lilili-item a{
+    font-family: Roboto;
+    font-size: 16px!important;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 0;
+    margin: 0;
+    color: #000000;
+}
+.brang-cart-item{
+    box-shadow:
+        0px 17px 37px 0px #0000001A,
+        0px 67px 67px 0px #00000017,
+        0px 151px 91px 0px #0000000D,
+        0px 269px 107px 0px #00000003,
+        0px 420px 118px 0px #00000000;
+}
+.category-page{
+    padding-left: 130px;
+    padding-right: 130px;
+}
+@media (max-width: 768px) {
+    .category-page{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+.category-page-cont{
+    margin-top: 64px;
+    padding: 0;
+}
+.cat-product-card{
+    box-shadow:
+        0px 17px 37px 0px #0000001A,
+        0px 67px 67px 0px #00000017,
+        0px 151px 91px 0px #0000000D,
+        0px 269px 107px 0px #00000003,
+        0px 420px 118px 0px #00000000;
+    border-radius: 10px;
+}
+.cat-product-card__title{
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
 }
 @media (max-width: 1438px) {
     #header{

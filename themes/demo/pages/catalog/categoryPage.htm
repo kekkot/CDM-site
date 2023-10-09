@@ -36,23 +36,29 @@ sorting = "no"
 {% set obBrandList = BrandList.make().active() %}
 {% set obCategoryList = CategoryList.make().tree() %}
 
- 
- 
-<section id="content" >
+
+
+<section id="content" class="category-page">
     <div class="content-wrap py-0 mx-auto" {% if obProduct is not empty %} style="max-width: 960px" {% endif %}>
-        {% partial 'breadcrubs' %}
-        <div class="container mt-2 mb-5">
-            <div class="row">
+        <h1 class="vakansii-page__title">Каталог спецтехникии</h1>
+        <div class="breadcrumb-2__cont">
+            <ul class="breadcrumb-2">
+                <li class="breadcrumb-2__item breadcrumb-2__item--home"><a class="breadcrumb-2__link" href="/">Главная</a></li>
+                <li class="breadcrumb-2__item breadcrumb-2__item--lizing"><a class="breadcrumb-2__link">Каталог</a></li>
+            </ul>
+        </div>
+        <div class="container category-page-cont">
+            <div class="row justify-content-between">
                 {% if obProduct is empty %}
                 <div class="col-lg-3 ">
                     {% partial 'sideMenu' %}
                 </div>
                 {% endif %}
-                <div {% if obProduct is not empty %} class="col-lg-12" {% else %} class="col-lg-9" {% endif %}>
+                <div {% if obProduct is not empty %} class="col-lg-12" {% else %} class="col-lg-8" {% endif %}>
                     {% if obProduct is not empty %}
                     {% partial 'product-page' %}
-                    {% else %} 
-                    {% partial 'catalog' %} 
+                    {% else %}
+                    {% partial 'catalog' %}
                     {% endif %}
                 </div>
             </div>

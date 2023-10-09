@@ -48,20 +48,6 @@ public function onReload(){
   {% set obCategory = CategoryPage.get() %}
 
 
-<!--<section class="vakansii-page bg-white" >
-
-    <h1 class="vakansii-page__title">Лизинг</h1>
-    <div class="breadcrumb-2__cont">
-        <ul class="breadcrumb-2">
-            <li class="breadcrumb-2__item breadcrumb-2__item--home"><a class="breadcrumb-2__link" href="/">Главная</a></li>
-            <li class="breadcrumb-2__item breadcrumb-2__item--lizing"><a class="breadcrumb-2__link">Лизинг</a></li>
-        </ul>
-    </div>
-    <div class="page-text-container">
-        {% partial 'pages/lizing.htm' %}
-    </div>
-
-</section>-->
 <section id="content" class="vakansii-page bg-white">
    <!-- <h1 class="vakansii-page__title">{{this.page.title}}</h1>-->
     <div class="content-wrap py-0 mx-auto" {% if obProduct is not empty %} style="max-width: 960px" {% endif %}>
@@ -80,8 +66,6 @@ public function onReload(){
                     {% partial 'sideMenu' %}
                 </div>
                 <div class="col-lg-9">
-                    {% partial 'brand/description' %}
-
                     {# <form id="catForm" data-request="onReload">
                         <div class="mb-3 _required custom-select" id="showBrand" data-brand="{{obBrand.id}}">
                             <select type="text" name="name" id="select" class="form-control" style="max-width: 250px;">

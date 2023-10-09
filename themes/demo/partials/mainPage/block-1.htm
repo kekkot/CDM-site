@@ -1,3 +1,15 @@
+[BrandData]
+
+[ProductList]
+sorting = "no"
+
+[CategoryData]
+==
+{% if filteredList is not empty %}
+{% set obProductListTemp = ProductList.make().active().brand(brandId) %}
+{% set obProductList = obProductListTemp.category(filteredList) %}
+
+{% endif %}
 <!-- Content
 ============================================= -->
 <h3 class="title-catalog-text">Каталог спецтехники</h3>
@@ -11,8 +23,15 @@
                     <div class="cart-item p-0 col-sm-6">
                         <div class="cart-item-shadow-menu">
                             <div class="cart-item-shadow-menu__item">
-                                <a class="cart-item-shadow-menu__link">Все бренды</a>
+                                <a class="cart-item-shadow-menu__link" href="/catalog/{{obCategory.slug}}">Все бренды</a>
                             </div>
+                            {% for obBrand in obBrands %}
+                            <div class="cart-item-shadow-menu__item">
+                                <a href="/brand/{{obBrand.name}}?cat={{obActiveCategoryItem.id}}#reload" class="cart-item-shadow-menu__link"
+
+                                >{{obBrand.name}}</a>
+                            </div>
+                            {% endfor %}
                         </div>
                         <div class="cart-item-img-cont fbox-media p-0 m-0">
                             <a class="cart-link" href="/catalog/{{obCategory.slug}}">
